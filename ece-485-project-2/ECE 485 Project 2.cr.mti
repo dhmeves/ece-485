@@ -1,4 +1,12 @@
-C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
+C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/four_to_one_mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/four_to_one_mux.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity four_to_one_mux
+-- Compiling architecture behav of four_to_one_mux
+
+} {} {}} C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -6,11 +14,12 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity one_bit_full_adder
 -- Compiling architecture behav of one_bit_full_adder
 
-} {} {}} C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd
+} {} {}} C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity alu
+-- Compiling entity two_to_one_mux
+-- Compiling architecture behav of two_to_one_mux
 
 } {} {}}
