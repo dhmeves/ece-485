@@ -1,0 +1,236 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Daniel/Desktop/Modelsim_tutorial2
+Ecounter
+Z0 w1428428338
+Z1 dC:/Users/Daniel/Desktop/ECE_485_Project_1
+Z2 8C:/Users/Daniel/Desktop/ECE_485_Project_1/counter.vhd
+Z3 FC:/Users/Daniel/Desktop/ECE_485_Project_1/counter.vhd
+l0
+L10
+V7ACfAkC^1aCRINY3^dF7G2
+!s100 [3YB00WOScZ[1n5QzB5>K2
+Z4 OP;C;10.4a;61
+32
+Z5 !s110 1476079352
+!i10b 1
+Z6 !s108 1476079352.000000
+Z7 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ECE_485_Project_1/counter.vhd|
+Z8 !s107 C:/Users/Daniel/Desktop/ECE_485_Project_1/counter.vhd|
+!i113 1
+Z9 o-work work -2002 -explicit -O0
+Z10 tExplicit 1
+Aonly
+DEx4 work 7 counter 0 22 7ACfAkC^1aCRINY3^dF7G2
+l34
+L16
+VRT5AgWb7bZgbigbmLP^QR3
+!s100 ^Tk8L<z6nzL>X;n;9<^FD1
+R4
+32
+R5
+!i10b 1
+R6
+R7
+R8
+!i113 1
+R9
+R10
+Eencoder_behav
+Z11 w1476079334
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R1
+Z14 8C:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_behav.vhd
+Z15 FC:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_behav.vhd
+l0
+L4
+VE`ULVGYO:S1REFj`4dPQW1
+!s100 dcG?J>IU08YJ6_aTC1XTg1
+R4
+32
+R5
+!i10b 1
+R6
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_behav.vhd|
+Z17 !s107 C:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_behav.vhd|
+!i113 1
+R9
+R10
+Abehav
+R12
+R13
+DEx4 work 13 encoder_behav 0 22 E`ULVGYO:S1REFj`4dPQW1
+l12
+L11
+Vo_n9R[9@Q;Q?SQn?Q;5S92
+!s100 ^B>UX;_1iC7=hYgK><ZUn2
+R4
+32
+R5
+!i10b 1
+R6
+R16
+R17
+!i113 1
+R9
+R10
+Eencoder_behav_test_bench
+R11
+R12
+R13
+R1
+R14
+R15
+l0
+L30
+VRRk><jRG_5k9NdQdQYa:E0
+!s100 GH:j8A@ij52[5Ze3hBziO2
+R4
+32
+R5
+!i10b 1
+R6
+R16
+R17
+!i113 1
+R9
+R10
+Abehavior
+R12
+R13
+DEx4 work 24 encoder_behav_test_bench 0 22 RRk><jRG_5k9NdQdQYa:E0
+l50
+L33
+VH?L=A8Qk`RoNG[gcBD4ci1
+!s100 HlSQl;LTD^g_Adk_IN7[?0
+R4
+32
+R5
+!i10b 1
+R6
+R16
+R17
+!i113 1
+R9
+R10
+Eencoder_struct
+Z18 w1476078918
+R12
+R13
+R1
+Z19 8C:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_struct.vhd
+Z20 FC:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_struct.vhd
+l0
+L4
+VAeL_h_?o;^=B[MWa7<2R91
+!s100 E8=fPmD4PllZzbbIklDSF0
+R4
+32
+R5
+!i10b 1
+R6
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_struct.vhd|
+Z22 !s107 C:/Users/Daniel/Desktop/ECE_485_Project_1/encoder_struct.vhd|
+!i113 1
+R9
+R10
+Astruct
+R12
+R13
+DEx4 work 14 encoder_struct 0 22 AeL_h_?o;^=B[MWa7<2R91
+l12
+L11
+VcdML8VhWcnTEYXiTUl`GV0
+!s100 CBVP:JlWl23kPE]ljhEie2
+R4
+32
+R5
+!i10b 1
+R6
+R21
+R22
+!i113 1
+R9
+R10
+Eencoder_struct_test_bench
+R18
+R12
+R13
+R1
+R19
+R20
+l0
+L21
+V98QYeWCWH9g:EY1dXDJ[z1
+!s100 PdWa^=:iD9eWBXg[R@?1]2
+R4
+32
+R5
+!i10b 1
+R6
+R21
+R22
+!i113 1
+R9
+R10
+Abehavior
+R12
+R13
+DEx4 work 25 encoder_struct_test_bench 0 22 98QYeWCWH9g:EY1dXDJ[z1
+l41
+L24
+VP<iCA;>]do?GNJocOz3<h1
+!s100 ezLB=KKUa_58R7m60@YcM1
+R4
+32
+R5
+!i10b 1
+R6
+R21
+R22
+!i113 1
+R9
+R10
+Etest_counter
+R0
+R1
+Z23 8C:/Users/Daniel/Desktop/ECE_485_Project_1/tcounter.vhd
+Z24 FC:/Users/Daniel/Desktop/ECE_485_Project_1/tcounter.vhd
+l0
+L10
+VTMnaC6>:ePAOTNi64YDd>3
+!s100 4H1USZMHB7cgmkGOZ:ClI0
+R4
+32
+R5
+!i10b 1
+R6
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ECE_485_Project_1/tcounter.vhd|
+Z26 !s107 C:/Users/Daniel/Desktop/ECE_485_Project_1/tcounter.vhd|
+!i113 1
+R9
+R10
+Aonly
+Z27 DEx4 work 12 test_counter 0 22 TMnaC6>:ePAOTNi64YDd>3
+l25
+L14
+Z28 V`hC3K=MIcWVW`_zc:4Z;51
+Z29 !s100 GWn18Y`M^WdDSBha21A9n3
+R4
+32
+R5
+!i10b 1
+R6
+R25
+R26
+!i113 1
+R9
+R10
