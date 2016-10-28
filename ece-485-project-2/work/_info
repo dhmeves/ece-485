@@ -8,3 +8,63 @@ z2
 !i10f 100
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
+Ealu
+w1477604094
+Z0 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z1 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z2 dC:/Users/Daniel/Desktop/ece-485/ece-485-project-2
+8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd
+FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd
+l0
+L4
+V@b@3_:V9Z1FK4:_T?g=z91
+!s100 UUZK<z=XL8C3Yde8O^OZ72
+Z3 OP;C;10.4a;61
+32
+Z4 !s110 1477615301
+!i10b 1
+Z5 !s108 1477615301.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd|
+!s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd|
+!i113 1
+Z6 o-work work -2002 -explicit -O0
+Z7 tExplicit 1
+Eone_bit_full_adder
+Z8 w1477615256
+R0
+R1
+R2
+Z9 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
+Z10 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
+l0
+L4
+VbRZN5m>i8GW:QlB21`kLI1
+!s100 ROA_><a62;1cTMdfccmKH2
+R3
+32
+R4
+!i10b 1
+R5
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd|
+Z12 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd|
+!i113 1
+R6
+R7
+Abehav
+R0
+R1
+Z13 DEx4 work 18 one_bit_full_adder 0 22 bRZN5m>i8GW:QlB21`kLI1
+l12
+L11
+Z14 V_L8fzLBKN1Z2=L87;BFXY0
+Z15 !s100 S^fka`1]f4nk:<>G6XIO91
+R3
+32
+R4
+!i10b 1
+R5
+R11
+R12
+!i113 1
+R6
+R7

@@ -1,9 +1,0 @@
-library IEEE;
-use ieee.std_logic_1164.all;
-
-entity 1_bit_full_adder is
-	port(
-		a , b, cin : in bit;
-		cout, result: out bit
-	);
-end entity 1_bit_full_adder;
