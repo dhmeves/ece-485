@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
 Ealu
-Z0 w1477620530
+Z0 w1477620880
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 Z3 dC:/Users/Daniel/Desktop/ece-485/ece-485-project-2
@@ -21,9 +21,9 @@ Vod@_`?U48:ImK5=M6NJnD3
 !s100 cmNIJ7h[=z]Yod`Pnf;OP1
 Z6 OP;C;10.4a;61
 32
-Z7 !s110 1477620532
+Z7 !s110 1477620883
 !i10b 1
-Z8 !s108 1477620532.000000
+Z8 !s108 1477620883.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd|
 Z10 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd|
 !i113 1
@@ -38,8 +38,8 @@ R2
 DEx4 work 3 alu 0 22 od@_`?U48:ImK5=M6NJnD3
 l13
 L11
-VBB4T<Wdld]ScnMF0:^XHn2
-!s100 h=NUT76m2bUe@lo?6zNNg0
+ViEmY6JoiFfHMB<bI23dIl0
+!s100 VfKOL0c`z7fLXB^V3O>`n1
 R6
 32
 R7
