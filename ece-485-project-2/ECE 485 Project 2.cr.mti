@@ -22,4 +22,15 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity two_to_one_mux
 -- Compiling architecture behav of two_to_one_mux
 
+} {} {}} C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity alu
+-- Compiling architecture behav of alu
+-- Loading entity one_bit_full_adder
+-- Loading entity two_to_one_mux
+-- Loading entity four_to_one_mux
+
 } {} {}}
