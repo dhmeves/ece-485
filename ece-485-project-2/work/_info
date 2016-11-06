@@ -21,9 +21,9 @@ Vod@_`?U48:ImK5=M6NJnD3
 !s100 cmNIJ7h[=z]Yod`Pnf;OP1
 Z6 OP;C;10.4a;61
 32
-Z7 !s110 1478389366
+Z7 !s110 1478391584
 !i10b 1
-Z8 !s108 1478389365.000000
+Z8 !s108 1478391584.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd|
 Z10 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/alu.vhd|
 !i113 1
@@ -63,11 +63,11 @@ VY?F`?^cNzhO?:BkkUg;g^3
 !s100 R:3@YO`oYdmgEjmBHXPPl3
 R6
 32
-R7
+Z20 !s110 1478391585
 !i10b 1
-Z20 !s108 1478389366.000000
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/four_to_one_mux.vhd|
-Z22 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/four_to_one_mux.vhd|
+Z21 !s108 1478391585.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/four_to_one_mux.vhd|
+Z23 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/four_to_one_mux.vhd|
 !i113 1
 R11
 R12
@@ -81,21 +81,21 @@ Va`]H`nAQ6FOaI=?<3@ZkF0
 !s100 BgH:g1OQ5_2dFZlN9=EY21
 R6
 32
-R7
-!i10b 1
 R20
+!i10b 1
 R21
 R22
+R23
 !i113 1
 R11
 R12
 Eone_bit_full_adder
-Z23 w1477615256
+Z24 w1477615256
 R1
 R2
 R3
-Z24 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
-Z25 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
+Z25 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
+Z26 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd
 l0
 L4
 VbRZN5m>i8GW:QlB21`kLI1
@@ -104,9 +104,9 @@ R6
 32
 R7
 !i10b 1
-R20
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd|
-Z27 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd|
+R8
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd|
+Z28 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/one_bit_full_adder.vhd|
 !i113 1
 R11
 R12
@@ -122,30 +122,69 @@ R6
 32
 R7
 !i10b 1
-R20
-R26
+R8
 R27
+R28
+!i113 1
+R11
+R12
+Etest_bench_ripple_adder
+Z29 w1478391547
+R1
+R2
+R3
+Z30 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/test_bench_ripple_adder.vhd
+Z31 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/test_bench_ripple_adder.vhd
+l0
+L4
+VU_CCDCjL`?@hGkdhfaU892
+!s100 GGCinZM7CjJzV[ESD]XYg3
+R6
+32
+R20
+!i10b 1
+R21
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/test_bench_ripple_adder.vhd|
+Z33 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/test_bench_ripple_adder.vhd|
+!i113 1
+R11
+R12
+Abehav
+R1
+R2
+Z34 DEx4 work 23 test_bench_ripple_adder 0 22 U_CCDCjL`?@hGkdhfaU892
+l25
+L7
+Z35 Vk=RoLigzR^z;k^<`KacfJ1
+Z36 !s100 O<A6m=DFjJUGT<5<F`9iN1
+R6
+32
+R20
+!i10b 1
+R21
+R32
+R33
 !i113 1
 R11
 R12
 Ethirty_two_bit_alu
-Z28 w1478389362
+Z37 w1478389362
 R1
 R2
 R3
-Z29 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd
-Z30 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd
+Z38 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd
+Z39 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd
 l0
 L4
 VdWRjz^8N2@el7>VWSG<BN2
 !s100 F:@JSXcX5U[X2SA4H:L?J3
 R6
 32
-R7
-!i10b 1
 R20
-Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd|
-Z32 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd|
+!i10b 1
+R21
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd|
+Z41 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/thirty_two_bit_alu.vhd|
 !i113 1
 R11
 R12
@@ -160,21 +199,21 @@ V0ZJ30KiVRbDY22ZVelR:z2
 !s100 4C>AmbfWCJe`zO^mE6_HL3
 R6
 32
-R7
-!i10b 1
 R20
-R31
-R32
+!i10b 1
+R21
+R40
+R41
 !i113 1
 R11
 R12
 Etwo_to_one_mux
-Z33 w1477616028
+Z42 w1477616028
 R1
 R2
 R3
-Z34 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd
-Z35 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd
+Z43 8C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd
+Z44 FC:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd
 l0
 L4
 VO=3izccmEhiZkCl_J;CZk1
@@ -183,9 +222,9 @@ R6
 32
 R7
 !i10b 1
-R20
-Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd|
-Z37 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd|
+R8
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd|
+Z46 !s107 C:/Users/Daniel/Desktop/ece-485/ece-485-project-2/two_to_one_mux.vhd|
 !i113 1
 R11
 R12
@@ -201,9 +240,9 @@ R6
 32
 R7
 !i10b 1
-R20
-R36
-R37
+R8
+R45
+R46
 !i113 1
 R11
 R12
