@@ -11,4 +11,36 @@ end thirty_two_bit_register;
 
 architecture behav of thirty_two_bit_register is
 	begin	
-		DFF1 : entity work.d_flip_flop(behav) port map(
+		DFF1 : entity work.d_flip_flop(behav) port map(clk, data(0), rst, pre, ce, output(0));
+		DFF2 : entity work.d_flip_flop(behav) port map(clk, data(1), rst, pre, ce, output(1));
+		DFF3 : entity work.d_flip_flop(behav) port map(clk, data(2), rst, pre, ce, output(2));
+		DFF4 : entity work.d_flip_flop(behav) port map(clk, data(3), rst, pre, ce, output(3));
+		DFF5 : entity work.d_flip_flop(behav) port map(clk, data(4), rst, pre, ce, output(4));
+		DFF6 : entity work.d_flip_flop(behav) port map(clk, data(5), rst, pre, ce, output(5));
+		DFF7 : entity work.d_flip_flop(behav) port map(clk, data(6), rst, pre, ce, output(6));
+		DFF8 : entity work.d_flip_flop(behav) port map(clk, data(7), rst, pre, ce, output(7));
+		DFF9 : entity work.d_flip_flop(behav) port map(clk, data(8), rst, pre, ce, output(8));
+		DFF10 : entity work.d_flip_flop(behav) port map(clk, data(9), rst, pre, ce, output(9));
+		DFF11 : entity work.d_flip_flop(behav) port map(clk, data(10), rst, pre, ce, output(10));
+		DFF12 : entity work.d_flip_flop(behav) port map(clk, data(11), rst, pre, ce, output(11));
+		DFF13 : entity work.d_flip_flop(behav) port map(clk, data(12), rst, pre, ce, output(12));
+		DFF14 : entity work.d_flip_flop(behav) port map(clk, data(13), rst, pre, ce, output(13));
+		DFF15 : entity work.d_flip_flop(behav) port map(clk, data(14), rst, pre, ce, output(14));
+		DFF16 : entity work.d_flip_flop(behav) port map(clk, data(15), rst, pre, ce, output(15));
+		DFF17 : entity work.d_flip_flop(behav) port map(clk, data(16), rst, pre, ce, output(16));
+		DFF18 : entity work.d_flip_flop(behav) port map(clk, data(17), rst, pre, ce, output(17));
+		DFF19 : entity work.d_flip_flop(behav) port map(clk, data(18), rst, pre, ce, output(18));
+		DFF20 : entity work.d_flip_flop(behav) port map(clk, data(19), rst, pre, ce, output(19));
+		DFF21 : entity work.d_flip_flop(behav) port map(clk, data(20), rst, pre, ce, output(20));
+		DFF22 : entity work.d_flip_flop(behav) port map(clk, data(21), rst, pre, ce, output(21));
+		DFF23 : entity work.d_flip_flop(behav) port map(clk, data(22), rst, pre, ce, output(22));
+		DFF24 : entity work.d_flip_flop(behav) port map(clk, data(23), rst, pre, ce, output(23));
+		DFF25 : entity work.d_flip_flop(behav) port map(clk, data(24), rst, pre, ce, output(24));
+		DFF26 : entity work.d_flip_flop(behav) port map(clk, data(25), rst, pre, ce, output(25));
+		DFF27 : entity work.d_flip_flop(behav) port map(clk, data(26), rst, pre, ce, output(26));
+		DFF28 : entity work.d_flip_flop(behav) port map(clk, data(27), rst, pre, ce, output(27));
+		DFF29 : entity work.d_flip_flop(behav) port map(clk, data(28), rst, pre, ce, output(28));
+		DFF30 : entity work.d_flip_flop(behav) port map(clk, data(29), rst, pre, ce, output(29));
+		DFF31 : entity work.d_flip_flop(behav) port map(clk, data(30), rst, pre, ce, output(30));
+		DFF32 : entity work.d_flip_flop(behav) port map(clk, data(31), rst, pre, ce, output(31));
+end behav;
