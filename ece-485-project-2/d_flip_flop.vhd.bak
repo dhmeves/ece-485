@@ -1,0 +1,6 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+
+entity d_flip_flop is
+	port(
+		clk 

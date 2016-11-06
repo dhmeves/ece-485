@@ -43,14 +43,14 @@ begin
 	wait for 50 ns;
 	a <= "00001111000011110000111100001111";
 	b <= "10101010101010101010101010101010";
-	less <= "0";
-	ainvert <= "0";
-	binvert <= "0";
-	cin <= "0";
-	ALUOp0 <= "0";
-	ALUOp1 <= "1";
-	set <= "0";
-	overflow <= "0";	
+	less <= '0';
+	ainvert <= '0';
+	binvert <= '0';
+	cin <= '0';
+	ALUOp0 <= '1';
+	ALUOp1 <= '0';
+	set <= '0';
+	overflow <= '0';	
 
 	wait;
 end process;
