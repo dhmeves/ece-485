@@ -6,4 +6,7 @@ end multicycle_datapath;
 
 architecture behav of multicycle_datapath is
 
-component 
+component program_counter
+	port(
+		input : in std_logic_vector(31 downto 0);
+		output : out std_logic_vector(31 downto 0)
