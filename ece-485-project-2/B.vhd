@@ -10,3 +10,5 @@ end B;
 
 architecture behav of B is
 	begin
+		PASB : entity work.thirty_two_bit_register(behav) port map(input, clk, rst, pre, ce, output);
+end behav;

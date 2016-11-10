@@ -10,3 +10,6 @@ component program_counter
 	port(
 		input : in std_logic_vector(31 downto 0);
 		output : out std_logic_vector(31 downto 0)
+component two_to_one_mux
+	port(
+		
