@@ -2,8 +2,9 @@ library IEEE;
 use ieee.std_logic_1164.all;
 
 entity alu is
-	port(
+	port(	--Inputs
 		a, b, less, ainvert , binvert, carryin, ALUOp0, ALUOp1 : in std_logic;
+		--Outputs
 		carryout, result, set, overflow: out std_logic
 	);
 end entity alu;
@@ -11,6 +12,7 @@ end entity alu;
 architecture behav of alu is
 	signal amuxoutput, bmuxoutput, andgate, orgate, sum :  std_logic := '0';
 	begin
+		--Creating objects of each (Port map sends the inputs for each object and receives output)
 		FULLADDER : entity work.one_bit_full_adder(behav) port map(amuxoutput, bmuxoutput, carryin, carryout, sum);
 		A_MUX : entity work.two_to_one_mux(behav) port map (a, "not"(a), ainvert, amuxoutput);
 		B_MUX : entity work.two_to_one_mux(behav) port map (b, "not"(b), binvert, bmuxoutput);

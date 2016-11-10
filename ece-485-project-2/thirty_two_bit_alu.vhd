@@ -12,6 +12,7 @@ end thirty_two_bit_alu;
 architecture behav of thirty_two_bit_alu is
 	signal c : std_logic_vector(30 downto 0) := (others => '0');
 	begin
+		--Instances
 		ADD1 : entity work.alu(behav) port map(a(0), b(0), less, ainvert, binvert, cin, ALUOp0, ALUOp1, c(0), result(0), set, overflow);
 		ADD2 : entity work.alu(behav) port map(a(1), b(1), less, ainvert, binvert, c(0), ALUOp0, ALUOp1, c(1), result(1), set, overflow);
 		ADD3 : entity work.alu(behav) port map(a(2), b(2), less, ainvert, binvert, c(1), ALUOp0, ALUOp1, c(2), result(2), set, overflow);

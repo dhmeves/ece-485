@@ -10,7 +10,7 @@ entity sign_extend is
 end sign_extend;
 
 architecture behav of sign_extend is
-	signal output_buf : std_logic := '0';
+	signal output_buf : std_logic;
 	begin	
 	
 		DFF1 : entity work.d_flip_flop(behav) port map(clk, instr15_0(0), rst, pre, ce, output(0));
@@ -30,7 +30,7 @@ architecture behav of sign_extend is
 		DFF15 : entity work.d_flip_flop(behav) port map(clk, instr15_0(14), rst, pre, ce, output(14));
 		DFF16 : entity work.d_flip_flop(behav) port map(clk, instr15_0(15), rst, pre, ce, output(15));
 		
-		output(15) <= output_buf;
+		output_buf <= instr15_0(15);
 		
 		output(16) <= '0' when output_buf = '0' else '1' when output_buf = '1';
 		output(17) <= '0' when output_buf = '0' else '1' when output_buf = '1';
