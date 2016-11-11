@@ -48,6 +48,6 @@ architecture behav of thirty_two_bit_alu is
 		ADD31 : entity work.alu(behav) port map(a(30), b(30), less, ainvert, binvert, c(29), ALUOp, c(30), result(30), set, overflow);
 		ADD32 : entity work.alu(behav) port map(a(31), b(31), less, ainvert, binvert, c(30), ALUOp, cout, result(31), set, overflow);
 		
-		zero <= not((((ADD1 or ADD2) OR (ADD3 OR ADD4)) OR ((ADD5 OR ADD6) OR (ADD7 OR ADD8))) OR (((ADD9 OR ADD10) OR (ADD11 OR ADD12)) OR ((ADD13 OR ADD14) OR (ADD15 OR ADD16)))) OR ((((ADD17 OR ADD18) OR (ADD19 OR ADD20)) OR ((ADD21 OR ADD22) OR (ADD23 OR ADD24))) OR (((ADD25 OR ADD26) OR (ADD27 OR ADD28)) OR ((ADD29 OR ADD30) OR (ADD31 OR ADD32)))));
+		--zero <= not((((ADD1 or ADD2) OR (ADD3 OR ADD4)) OR ((ADD5 OR ADD6) OR (ADD7 OR ADD8))) OR (((ADD9 OR ADD10) OR (ADD11 OR ADD12)) OR ((ADD13 OR ADD14) OR (ADD15 OR ADD16)))) OR ((((ADD17 OR ADD18) OR (ADD19 OR ADD20)) OR ((ADD21 OR ADD22) OR (ADD23 OR ADD24))) OR (((ADD25 OR ADD26) OR (ADD27 OR ADD28)) OR ((ADD29 OR ADD30) OR (ADD31 OR ADD32)))));
 		
 end behav;	
