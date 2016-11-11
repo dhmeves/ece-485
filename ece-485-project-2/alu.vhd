@@ -10,7 +10,7 @@ entity alu is
 end entity alu;
 
 architecture behav of alu is
-	signal amuxoutput, bmuxoutput, andgate, orgate, sum :  std_logic := '0';
+	signal amuxoutput, bmuxoutput, andgate, orgate, sum :  std_logic;
 	begin
 		--Creating objects of each (Port map sends the inputs for each object and receives output)
 		FULLADDER : entity work.one_bit_full_adder(behav) port map(amuxoutput, bmuxoutput, carryin, carryout, sum);
