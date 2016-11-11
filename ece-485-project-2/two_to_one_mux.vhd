@@ -3,8 +3,9 @@ use ieee.std_logic_1164.all;
 
 entity two_to_one_mux is
 	port(
-		a, b, sel : in std_logic;
-		output : out std_logic
+		a, b : in std_logic_vector(31 downto 0); 
+		sel : in std_logic_vector(1 downto 0);
+		output : out std_logic_vector(31 downto 0)
 	);
 end entity two_to_one_mux;
 
