@@ -9,14 +9,16 @@ architecture behav of test_bench_ripple_adder is
 component thirty_two_bit_alu
 	port( 
 		a, b : in std_logic_vector(31 downto 0);
-		less, ainvert, binvert, cin, ALUOp0, ALUOp1 : in std_logic;
+		less, ainvert, binvert, cin : in std_logic;
+		ALUOp : in std_logic_vector(1 downto 0);
 		result : out std_logic_vector(31 downto 0);
 		cout, set, overflow : out std_logic);
 end component;
 
 --Inputs
 signal a, b : std_logic_vector(31 downto 0) := (others => '0');
-signal less, ainvert, binvert, cin, ALUOp0, ALUOp1 : std_logic := '0';
+signal less, ainvert, binvert, cin : std_logic := '0';
+signal ALUOp : std_logic_vector(1 downto 0) := (others => '0');
 
 --Outputs
 signal result : std_logic_vector(31 downto 0);
@@ -30,8 +32,7 @@ begin
 		ainvert => ainvert,
 		binvert => binvert,
 		cin => cin,
-		ALUOp0 => ALUOp0,
-		ALUOp1 => ALUOp1,
+		ALUOp => ALUOp,
 		result => result,
 		cout => cout,
 		set => set,
@@ -47,8 +48,7 @@ begin
 	ainvert <= '0';
 	binvert <= '0';
 	cin <= '0';
-	ALUOp0 <= '0';
-	ALUOp1 <= '1';
+	ALUOp <= "01";
 	set <= '0';
 	overflow <= '0';	
 
