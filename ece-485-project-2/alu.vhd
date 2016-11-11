@@ -3,7 +3,8 @@ use ieee.std_logic_1164.all;
 
 entity alu is
 	port(	--Inputs
-		a, b, less, ainvert , binvert, carryin, ALUOp0, ALUOp1 : in std_logic;
+		a, b, less, ainvert , binvert, carryin : in std_logic;
+		ALUOp : in std_logic_vector(1 downto 0);
 		--Outputs
 		carryout, result, set, overflow: out std_logic
 	);
@@ -18,5 +19,5 @@ architecture behav of alu is
 		B_MUX : entity work.two_to_one_mux(behav) port map (b, "not"(b), binvert, bmuxoutput);
 		andgate <= amuxoutput and bmuxoutput;
 		orgate <= amuxoutput or bmuxoutput;
-		OUTMUX : entity work.four_to_one_mux(behav) port map (andgate, orgate, sum, less, ALUOp0, ALUOp1, result);
+		OUTMUX : entity work.four_to_one_mux(behav) port map (andgate, orgate, sum, less, ALUOp, result);
 end behav;

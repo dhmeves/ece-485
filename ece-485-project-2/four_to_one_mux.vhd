@@ -3,12 +3,13 @@ use ieee.std_logic_1164.all;
 
 entity four_to_one_mux is
 	port(
-		a, b, c, d, sel0, sel1 : in std_logic;
+		a, b, c, d : in std_logic;
+		sel : in std_logic_vector(1 downto 0);
 		output : out std_logic
 	);
 end entity four_to_one_mux;
 
 architecture behav of four_to_one_mux is
 	begin
-		output <= (a and (not sel0) and (not sel1)) or (b and sel0 and (not sel1)) or (c and (not sel0) and sel1) or (d and sel0 and sel1);
+		output <= (a and (not sel(0)) and (not sel(1))) or (b and sel(0) and (not sel(1))) or (c and (not sel(0)) and sel(1)) or (d and sel(0) and sel(1));
 end behav;

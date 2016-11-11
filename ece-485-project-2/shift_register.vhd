@@ -13,3 +13,4 @@ end shift_register;
 architecture behav of shift_register is
 	begin
 		
+		
