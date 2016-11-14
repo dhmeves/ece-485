@@ -5,7 +5,7 @@ entity registers is
 	port(
 		readRegister1, readRegister2, writeRegister : in std_logic_vector(4 downto 0); 
 		writeData : in std_logic_vector(31 downto 0);
-		clk, rst, pre, ce : in std_logic;
+		clk, rst, pre : in std_logic;
 		readData1, readData2 : out std_logic_vector(31 downto 0)
 	);
 end registers;
