@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 entity memory is
 	port(
 		address, writeData : in std_logic_vector(31 downto 0);
-		memWrite, memToReg : in std_logic;
+		memRead, memWrite : in std_logic;
 		memData : out std_logic_vector(31 downto 0)
 	);
 end memory;
