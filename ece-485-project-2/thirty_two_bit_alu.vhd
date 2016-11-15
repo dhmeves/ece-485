@@ -7,13 +7,14 @@ entity thirty_two_bit_alu is
 		less, ainvert, binvert, cin : in std_logic;
 		ALUOp : in std_logic_vector(1 downto 0);
 		result : out std_logic_vector(31 downto 0);
-		cout, set, overflow : out std_logic);
+		cout, set, overflow, zero : out std_logic);
 end thirty_two_bit_alu;
 
 architecture behav of thirty_two_bit_alu is
 	signal c : std_logic_vector(30 downto 0) := (others => '0');
-	signal zero : std_logic;
+	signal add : std_logic_vector(31 downto 0);
 	begin
+		result <= add;
 		--Instances
 		ADD1 : entity work.alu(behav) port map(a(0), b(0), less, ainvert, binvert, cin, ALUOp, c(0), result(0), set, overflow);
 		ADD2 : entity work.alu(behav) port map(a(1), b(1), less, ainvert, binvert, c(0), ALUOp, c(1), result(1), set, overflow);
@@ -48,6 +49,6 @@ architecture behav of thirty_two_bit_alu is
 		ADD31 : entity work.alu(behav) port map(a(30), b(30), less, ainvert, binvert, c(29), ALUOp, c(30), result(30), set, overflow);
 		ADD32 : entity work.alu(behav) port map(a(31), b(31), less, ainvert, binvert, c(30), ALUOp, cout, result(31), set, overflow);
 		
-		--zero <= not((((ADD1 or ADD2) OR (ADD3 OR ADD4)) OR ((ADD5 OR ADD6) OR (ADD7 OR ADD8))) OR (((ADD9 OR ADD10) OR (ADD11 OR ADD12)) OR ((ADD13 OR ADD14) OR (ADD15 OR ADD16)))) OR ((((ADD17 OR ADD18) OR (ADD19 OR ADD20)) OR ((ADD21 OR ADD22) OR (ADD23 OR ADD24))) OR (((ADD25 OR ADD26) OR (ADD27 OR ADD28)) OR ((ADD29 OR ADD30) OR (ADD31 OR ADD32)))));
+		zero <= not((((add(0) or add(1)) OR (add(2) OR add(3))) OR ((add(4) OR add(5)) OR (add(6) OR add(7)))) OR (((add(8) OR add(9)) OR (add(10) OR add(11))) OR ((add(12) OR add(13)) OR (add(14) OR add(15))))) OR ((((add(16) OR add(17)) OR (add(18) OR add(19))) OR ((add(20) OR add(21)) OR (add(22) OR add(23)))) OR (((add(24) OR add(25)) OR (add(26) OR add(27))) OR ((add(28) OR add(29)) OR (add(30) OR add(31)))));
 		
 end behav;	
