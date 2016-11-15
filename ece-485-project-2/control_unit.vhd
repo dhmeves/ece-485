@@ -6,7 +6,7 @@ entity control_unit is
 		op : in std_logic_vector(5 downto 0);
 		clk : in std_logic;
 		pcWriteCond, pcWrite, IorD, memRead, memWrite, memToReg, irWrite, ALUSrcA, regWrite, regDst : out std_logic;
-		ALUSrcB, ALUOp : out std_logic_vector(1 downto 0)
+		pcSource, ALUSrcB, ALUOp : out std_logic_vector(1 downto 0)
 	);
 end control_unit;
 
@@ -26,6 +26,7 @@ architecture behav of control_unit is
 					ALUSrcA <= '0';
 					regWrite <= '0';
 					regDst <= '0';
+					pcSourc <= "00";
 					ALUSrcB <= "00";
 					ALUOp <= "00";
 				elsif (op="100011") then		-- lw
@@ -39,6 +40,7 @@ architecture behav of control_unit is
 					ALUSrcA <= '0';
 					regWrite <= '0';
 					regDst <= '0';
+					pcSourc <= "00";
 					ALUSrcB <= "00";
 					ALUOp <= "00";
 				elsif (op="101011") then		--sw
@@ -52,6 +54,7 @@ architecture behav of control_unit is
 					ALUSrcA <= '0';
 					regWrite <= '0';
 					regDst <= '0';
+					pcSourc <= "00";
 					ALUSrcB <= "00";
 					ALUOp <= "00";
 				elsif (op="000100") then		-- bne/beq
@@ -65,6 +68,7 @@ architecture behav of control_unit is
 					ALUSrcA <= '0';
 					regWrite <= '0';
 					regDst <= '0';
+					pcSourc <= "00";
 					ALUSrcB <= "00";
 					ALUOp <= "00";
 				elsif (op="010000") then		-- or
@@ -78,6 +82,7 @@ architecture behav of control_unit is
 					ALUSrcA <= '0';
 					regWrite <= '0';
 					regDst <= '0';
+					pcSourc <= "00";
 					ALUSrcB <= "00";
 					ALUOp <= "00";
 				elsif (op="010001") then		-- andi
@@ -91,6 +96,7 @@ architecture behav of control_unit is
 					ALUSrcA <= '0';
 					regWrite <= '0';
 					regDst <= '0';
+					pcSourc <= "00";
 					ALUSrcB <= "00";
 					ALUOp <= "00";
 				end if;
