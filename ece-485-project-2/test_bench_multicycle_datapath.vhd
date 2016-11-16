@@ -13,9 +13,9 @@ component multicycle_datapath is
 end component;
 
 signal clk, rst, pre, ce, finished : std_logic := '0';
-signal freq : real;
-signal period : time := 1 sec / freq;
-signal half_period : time := period / 2;
+--signal freq : real;
+--signal period : time := 1 sec / freq;
+--signal half_period : time := period / 2;
 
 begin
 	test_bench: multicycle_datapath port map(
@@ -25,13 +25,18 @@ begin
 		ce => ce
 	);
 
-freq <= 0.01;
-clk <= not clk after half_period when finished /= '1' else '0';
-ce <= '1';
+--freq <= 0.01;
+--clk <= not clk after half_period when finished /= '1' else '0';
+--ce <= '1';
 
 stim_process : process
 begin
-
+	clk <= '0';
+	wait for 10 NS;
+	--wait for half_period;
+	clk <= '1';
+	wait for 10 NS;
+	--wait for half_period;
 	
 	--wait 50 ns;
 
