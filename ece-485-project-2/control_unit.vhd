@@ -18,22 +18,23 @@ architecture behav of control_unit is
 		process(clk) is
 		begin
 			if rising_edge(clk) then
-				if (S_If='1') then		
+				if (current_state=S_If) then		
 					current_state<=S_If;
-				elsif (S_Id) then		
+				elsif (current_state=S_Id) then		
 					current_state<=S_Id;
-				elsif (S_Ex) then		
+				elsif (current_state=S_Ex) then		
 					current_state<=S_Ex;
-				elsif (S_Mem) then		
+				elsif (current_state=S_Mem) then		
 					current_state<=S_Mem;
-				elsif (S_WB) then	
+				elsif (current_state=S_WB) then	
 					current_state<=S_Wb;
 				end if;
 			end if;
+		end process;
 		
 		process(current_state) is
 		begin
-		if (current_state==S_If) then
+		if (current_state=S_If) then
 			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
@@ -119,8 +120,9 @@ architecture behav of control_unit is
 				ALUSrcB <= "00";
 				ALUOp <= "00";
 			end if;
+		end if;
 
-		if (current_state==S_ID) then
+		if (current_state=S_ID) then
 			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
@@ -206,8 +208,9 @@ architecture behav of control_unit is
 				ALUSrcB <= "00";
 				ALUOp <= "00";
 			end if;
+		end if;
 
-		if (current_state==S_Ex) then
+		if (current_state=S_Ex) then
 			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
@@ -293,8 +296,9 @@ architecture behav of control_unit is
 				ALUSrcB <= "00";
 				ALUOp <= "00";
 			end if;
+		end if;
 
-		if (current_state==S_Mem) then
+		if (current_state=S_Mem) then
 			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
@@ -379,9 +383,10 @@ architecture behav of control_unit is
 				pcSource <= "00";
 				ALUSrcB <= "00";
 				ALUOp <= "00";
-			end if;
+			end if;	
+		end if;
 
-		if (current_state==S_Wb) then
+		if (current_state=S_Wb) then
 			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
@@ -467,5 +472,6 @@ architecture behav of control_unit is
 				ALUSrcB <= "00";
 				ALUOp <= "00";
 			end if;
-		end process;
-	end behav;
+		end if;
+	end process;
+end behav;
