@@ -9,20 +9,25 @@ end multicycle_datapath;
 
 architecture behav of multicycle_datapath is
 	signal pcWriteCond, pcWrite, IorD, memRead, memWrite, memToReg, irWrite, ALUSrcA, regWrite, regDst, pcControl, ALUZeroCond, less, ainvert, binvert, cin, cout, set, overflow : std_logic;
-	signal pcSource, ALUSrcB, ALUOp : std_logic_vector(1 downto 0);
+	signal pcSource, ALUSrcB, ALUOp, AluCuOp : std_logic_vector(1 downto 0);
 	signal instr31_26, instr5_0 : std_logic_vector(5 downto 0);
 	signal instr25_21, instr20_16, instr15_11, writeReg : std_logic_vector(4 downto 0);
 	signal instr15_0 : std_logic_vector(15 downto 0);
 	signal instr25_0 : std_logic_vector(25 downto 0);
 	signal pcIn, pcOut, ALU_BUF_IN, ALU_BUF_OUT, address, A_BUF_IN, A_BUF_OUT, B_BUF_IN, B_BUF_OUT, memDataIn, memDataOut, writeData, sign_extend_out, shift_left_2_sign_extend, immediate_four, ALU_A_IN, ALU_B_IN, instr25_0_32_bit, jump28 : std_logic_vector(31 downto 0);
+	signal operation : std_logic_vector(2 downto 0);
 	begin
 		pcControl <= pcWrite or (pcWriteCond and ALUZeroCond);
+
 		immediate_four <= "00000000000000000000000000000100";
+
 		jump28(31) <= pcOut(31);
 		jump28(30) <= pcOut(30);
 		jump28(29) <= pcOut(29);
 		jump28(28) <= pcOut(28);
+
 		cin <= '0';
+
 		instr25_0_32_bit(31) <= '0';
 		instr25_0_32_bit(30) <= '0';
 		instr25_0_32_bit(29) <= '0';
@@ -56,6 +61,10 @@ architecture behav of multicycle_datapath is
 		instr25_0_32_bit(1) <= instr25_0(1);
 		instr25_0_32_bit(0) <= instr25_0(0);
 
+		AluCuOp(1) <= operation(1);
+		AluCuOp(0) <= operation(0);
+		
+		alu_cu : entity work.alu_cu(behav) port map(instr5_0, ALUOp, operation);
 		control_unit : entity work.control_unit(behav) port map(instr31_26, clk, pcWriteCond, pcWrite, IorD, memRead, memWrite, memToReg, irWrite, ALUSrcA, regWrite, regDst, pcSource, ALUSrcB, ALUOp);
 		instruction_register : entity work.instr_reg(behav) port map(memDataIn, irWrite, instr31_26, instr5_0, instr25_21, instr20_16, instr15_11, instr15_0, instr25_0);
 		writeRegMux : entity work.two_to_one_mux_5_bit(behav) port map(instr20_16, instr15_11, regDst, writeReg);
@@ -71,7 +80,7 @@ architecture behav of multicycle_datapath is
 		A_BUF : entity work.A(behav) port map(A_BUF_IN, clk, rst, pre, ce, A_BUF_OUT);
 		B_BUF : entity work.B(behav) port map(B_BUF_IN, clk, rst, pre, ce, B_BUF_OUT);
 		ALU_PC_A_MUX : entity work.two_to_one_mux(behav) port map(pcOut, A_BUF_OUT, ALUSrcA, ALU_A_IN);
-		ALU : entity work.thirty_two_bit_alu(behav) port map(ALU_A_IN, ALU_B_IN, less, ainvert, binvert, cin, ALUOp, ALU_BUF_IN, cout, set, overflow, ALUZeroCond);
+		ALU : entity work.thirty_two_bit_alu(behav) port map(ALU_A_IN, ALU_B_IN, less, ainvert, operation(2), cin, AluCuOp, ALU_BUF_IN, cout, set, overflow, ALUZeroCond);
 		ALU_BUF : entity work.ALUOut(behav) port map(ALU_BUF_IN, clk, rst, pre, ce, ALU_BUF_OUT);
 		JUMP_Shift_Left : entity work.shift_register_by2(behav) port map(instr25_0_32_bit, jump28);
 		JUMP_MUX : entity work.four_to_one_mux(behav) port map(ALU_BUF_IN, ALU_BUF_OUT, jump28, immediate_four, pcSource, pcIn);
