@@ -8,7 +8,7 @@ entity shift_register_by2 is
 	);
 end shift_register_by2;
 
-architecture behav of shift_register is
+architecture behav of shift_register_by2 is
 	begin
 		output(31) <= input(29);
 		output(30) <= input(28);
@@ -42,7 +42,4 @@ architecture behav of shift_register is
 		output(2) <= input(0);
 		output(1) <= '0';
 		output(0) <= '0';
-end behav;
-		
-		
-		
+end behav;		
