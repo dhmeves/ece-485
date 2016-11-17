@@ -1,3 +1,4 @@
+force -freeze /test_bench_multicycle_datapath/ce 1 0
 mem load -skip 0 -filltype value -filldata 00 -fillradix hexadecimal -startaddress 0 -endaddress 65536 /test_bench_multicycle_datapath/test_bench/RAM/mem
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/writeData 8e4b012c 0
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/address 00000000 0
@@ -162,8 +163,6 @@ run 100
 noforce sim:/test_bench_multicycle_datapath/test_bench/RAM/writeData
 noforce sim:/test_bench_multicycle_datapath/test_bench/RAM/memWrite
 noforce sim:/test_bench_multicycle_datapath/test_bench/RAM/memRead
+noforce sim:/test_bench_multicycle_datapath/test_bench/RAM/address
+noforce sim:/test_bench_multicycle_datapath/test_bench/PC/input
 run 100
-force -freeze /test_bench_multicycle_datapath/test_bench/RAM/address 00000000 0
-force -freeze /test_bench_multicycle_datapath/test_bench/PC/input 00000000 0
-run 100
-
