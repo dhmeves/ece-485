@@ -6,6 +6,7 @@ entity alu_cu is
 		--Inputs
 		FC: in std_logic_vector(5 downto 0);
 		ALUOp: in std_logic_vector(1 downto 0);
+		opc : in std_logic_vector(5 downto 0);
 		--Output
 		Operation: out std_logic_vector (2 downto 0)
 		
@@ -14,10 +15,11 @@ end entity alu_cu;
 
 architecture behav of alu_cu is
 	signal  orgateop0, andgateop0, notorgateop1, andgateop2, orgateop2, op0, op1, op2 : std_logic :='0';
-	signal FuCo : std_logic_vector(5 downto 0);
+	signal FuCo, FuCo1 : std_logic_vector(5 downto 0);
 	--signal	OP : std_logic_vector(2 downto 0);
-	begin 	
-		FuCo<= FC when (ALUOp = "10") else "000000";
+	begin  
+		FuCo1<= FC when (ALUOp = "10") else "000000";
+		FuCo<="100100" when (opc ="001100") else FuCo1; 
 		orgateop0 <= FuCo(3) or FuCo(0);
 		andgateop0 <= orgateop0 and ALUOp(1);
 		notorgateop1 <= (not ALUOp(1)) or (not FuCo(2));

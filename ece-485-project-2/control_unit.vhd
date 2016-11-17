@@ -121,7 +121,7 @@ architecture behav of control_unit is
 			elsif (operation=itype) then		-- andi
 				ALUSrcA <= '1';
 				ALUSrcB <= "10";
-				ALUOp <= "00";
+				ALUOp <= "10";
 			end if;
 		end if;
 

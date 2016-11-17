@@ -68,7 +68,7 @@ architecture behav of multicycle_datapath is
 		AluCuOp(1) <= operation(1);
 		AluCuOp(0) <= operation(0);
 		
-		alu_cu : entity work.alu_cu(behav) port map(instr5_0, ALUOp, operation);
+		alu_cu : entity work.alu_cu(behav) port map(instr5_0, ALUOp, instr31_26, operation);
 		control_unit : entity work.control_unit(behav) port map(instr31_26, clk, pcWriteCond, pcWrite, IorD, memRead, memWrite, memToReg, irWrite, ALUSrcA, regWrite, regDst, pcSource, ALUSrcB, ALUOp);
 		instruction_register : entity work.instr_reg(behav) port map(memDataIn, irWrite, instr31_26, instr5_0, instr25_21, instr20_16, instr15_11, instr15_0, instr25_0);
 		writeRegMux : entity work.two_to_one_mux_5_bit(behav) port map(instr20_16, instr15_11, regDst, writeReg);
