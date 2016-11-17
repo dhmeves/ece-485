@@ -82,7 +82,7 @@ architecture behav of multicycle_datapath is
 		shift_left_2_ALU_B_MUX : entity work.shift_register_by2(behav) port map(sign_extend_out, shift_left_2_sign_extend);
 		ALU_B_MUX : entity work.four_to_one_mux(behav) port map(B_BUF_OUT, immediate_four, sign_extend_out, shift_left_2_sign_extend, ALUSrcB, ALU_B_IN);
 		A_BUF : entity work.A(behav) port map(A_BUF_IN, clk, rst, pre, ce, A_BUF_OUT);
-		B_BUF : entity work.B(behav) port map(B_BUF_IN, clk, rst, pre, ce, binvert, B_BUF_OUT);
+		B_BUF : entity work.B(behav) port map(B_BUF_IN, clk, rst, pre, ce, operation(2), B_BUF_OUT);
 		ALU_PC_A_MUX : entity work.two_to_one_mux(behav) port map(pcOut, A_BUF_OUT, ALUSrcA, ALU_A_IN);
 		ALU : entity work.thirty_two_bit_alu(behav) port map(ALU_A_IN, ALU_B_IN, less, ainvert, operation(2), cin, AluCuOp, ALU_BUF_IN, cout, set, overflow, ALUZeroCond);
 		ALU_BUF : entity work.ALUOut(behav) port map(ALU_BUF_IN, clk, rst, pre, ce, ALU_BUF_OUT);
