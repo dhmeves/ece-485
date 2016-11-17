@@ -74,6 +74,7 @@ architecture behav of control_unit is
 				operation<=store;
 			elsif (op="000100") then		-- branch
 				operation<=branch;
+				ALUOp <= "01";
 			elsif (op="010000") then		-- or
 				operation<=orop;
 			elsif (op="010001") then		-- itype
