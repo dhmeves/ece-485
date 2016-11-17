@@ -1,12 +1,11 @@
 library IEEE;
 use ieee.std_logic_1164.all;
---use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity memory is
 	port(
 		address, writeData : in std_logic_vector(31 downto 0);
-		memRead, memWrite : in std_logic;
+		clk, memRead, memWrite : in std_logic;
 		memData : out std_logic_vector(31 downto 0)
 	);
 end memory;
@@ -93,18 +92,28 @@ architecture behav of memory is
 		writeDataBuf(30) <= outByte3(6);
 		writeDataBuf(31) <= outByte3(7);
 		
-		process(address, writeData, memWrite)
+		process(address, writeData, clk, memRead, memWrite)
 			begin
 				addr <= to_integer(unsigned(address));
-				if (memWrite='1') and (memRead='0') then
-					mem(addr)<=inByte0;
-					mem(addr+1)<=inByte1;
-					mem(addr+2)<=inByte2;
-					mem(addr+3)<=inByte3;
-				elsif (memWrite='0') and (memRead='1') then
-					memData<=writeDataBuf;
-				else
-					memData<="ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+				if rising_edge(clk) then
+					if (memWrite='1') and (memRead='0') then
+						mem(addr)<=inByte0;
+						mem(addr+1)<=inByte1;
+						mem(addr+2)<=inByte2;
+						mem(addr+3)<=inByte3;
+					else
+						mem(addr)<="ZZZZZZZZ";
+						mem(addr+1)<="ZZZZZZZZ";
+						mem(addr+2)<="ZZZZZZZZ";
+						mem(addr+3)<="ZZZZZZZZ";
+					end if;
+				end if;
+				if falling_edge(clk) then
+					if (memWrite='0') and (memRead='1') then
+						memData<=writeDataBuf;
+					else
+						memData<="ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+					end if;
 				end if;
 		end process;
 end behav;

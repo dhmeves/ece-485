@@ -71,7 +71,7 @@ architecture behav of multicycle_datapath is
 		register_file : entity work.registers(behav) port map(instr25_21, instr20_16, writeReg, writeData, clk, rst, pre, regWrite, A_BUF_IN, B_BUF_IN);
 		writeDataMux : entity work.two_to_one_mux(behav) port map(ALU_BUF_OUT, memDataOut, memToReg, writeData);
 		memDataReg : entity work.memory_data_register(behav) port map(memDataIn, clk, rst, pre, ce, memDataOut);
-		RAM : entity work.memory(behav) port map(address, B_BUF_OUT, memRead, memWrite, memDataIn);
+		RAM : entity work.memory(behav) port map(address, B_BUF_OUT, clk, memRead, memWrite, memDataIn);
 		PC : entity work.program_counter(behav) port map(pcIn, clk, rst, pre, ce, pcControl, pcOut);
 		PC_MUX : entity work.two_to_one_mux(behav) port map(pcOut, ALU_BUF_OUT, IorD, address);
 		sign_extend : entity work.sign_extend(behav) port map(instr15_0, clk, rst, pre, ce, sign_extend_out);
