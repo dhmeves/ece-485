@@ -23,7 +23,7 @@ architecture behav of alu_cu is
 		notorgateop1 <= (not ALUOp(1)) or (not FuCo(2));
 		andgateop2 <= ALUOp(1) and FuCo(1);
 		orgateop2 <= ALUOp(0) or andgateop2;
-		op2 <= andgateop2;
+		op2 <= orgateop2;
 		op1 <= notorgateop1;
 		op0 <= orgateop0; 
 		Operation(2) <= op2;
