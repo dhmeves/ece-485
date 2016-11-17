@@ -11,11 +11,11 @@ entity memory is
 end memory;
 
 architecture behav of memory is
-	type ram is array (2147483647 downto 0) of std_logic_vector(7 downto 0);
+	type ram is array (8388608 downto 0) of std_logic_vector(7 downto 0);
 	signal inByte0, inByte1, inByte2, inByte3, outByte0, outByte1, outByte2, outByte3 : std_logic_vector(7 downto 0);
 	signal writeDataBuf : std_logic_vector(31 downto 0);
 	signal mem : ram;
-	signal addr : integer range 0 to 2147483647;
+	signal addr : integer range 0 to 8388608;
 	begin
 
 		inByte0(0) <= writeData(0);
