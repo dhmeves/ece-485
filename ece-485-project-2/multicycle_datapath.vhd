@@ -27,6 +27,10 @@ architecture behav of multicycle_datapath is
 		jump28(28) <= pcOut(28);
 
 		cin <= '0';
+		less <= '0';
+		ainvert <= '0';
+		set <= '0';
+		overflow <= '0';
 
 		instr25_0_32_bit(31) <= '0';
 		instr25_0_32_bit(30) <= '0';
