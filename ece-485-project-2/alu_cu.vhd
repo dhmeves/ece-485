@@ -14,8 +14,10 @@ end entity alu_cu;
 
 architecture behav of alu_cu is
 	signal  orgateop0, andgateop0, notorgateop1, andgateop2, orgateop2, op0, op1, op2 : std_logic :='0';
+	signal FuCo : std_logic_vector(5 downto 0);
 	--signal	OP : std_logic_vector(2 downto 0);
-	begin 
+	begin 	
+		FuCo<= FC when (ALUOp = "10") else "000000";
 		orgateop0 <= FC(3) or FC(0);
 		andgateop0 <= orgateop0 and ALUOp(1);
 		notorgateop1 <= (not ALUOp(1)) or (not FC(2));
