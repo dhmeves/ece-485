@@ -18,15 +18,15 @@ architecture behav of control_unit is
 		begin
 			if rising_edge(clk) then
 				if (current_state=S_If) then		
-					current_state<=S_If;
-				elsif (current_state=S_Id) then		
 					current_state<=S_Id;
-				elsif (current_state=S_Ex) then		
+				elsif (current_state=S_Id) then		
 					current_state<=S_Ex;
-				elsif (current_state=S_Mem) then		
+				elsif (current_state=S_Ex) then		
 					current_state<=S_Mem;
-				elsif (current_state=S_WB) then	
+				elsif (current_state=S_Mem) then		
 					current_state<=S_Wb;
+				elsif (current_state=S_WB) then	
+					current_state<=S_If;
 				end if;
 			end if;
 		end process;
