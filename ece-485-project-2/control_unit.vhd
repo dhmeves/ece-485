@@ -12,6 +12,8 @@ end control_unit;
 
 architecture behav of control_unit is
 	type states is (S_If, S_Id, S_Ex, S_Mem, S_Wb);
+	type operate is (branch, rtype, load, store, jump);
+	signal operation : operate;
 	signal current_state : states;
 	begin
 		process(clk) is
@@ -35,7 +37,7 @@ architecture behav of control_unit is
 		begin
 		if (current_state=S_If) then
 				pcWriteCond <= '0';
-				pcWrite <= '0';
+				pcWrite <= '1';
 				IorD <= '0';
 				memRead <= '1';
 				memWrite <= '0';
@@ -48,11 +50,9 @@ architecture behav of control_unit is
 				ALUSrcB <= "01";
 				ALUOp <= "00";
 			
-			end if;
 		end if;
 
 		if (current_state=S_ID) then
-			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
 				IorD <= '0';
@@ -61,86 +61,27 @@ architecture behav of control_unit is
 				memToReg <= '0';
 				irWrite <= '0';
 				ALUSrcA <= '0';
-				regWrite <= '1';
-				regDst <= '1';
-				pcSource <= "00";
-				ALUSrcB <= "00";
-				ALUOp <= "10";
-			elsif (op="100011") then		-- lw
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '1';
-				memWrite <= '0';
-				memToReg <= '1';
-				irWrite <= '0';
-				ALUSrcA <= '1';
-				regWrite <= '1';
+				regWrite <= '0';
 				regDst <= '0';
 				pcSource <= "00";
-				ALUSrcB <= "00";
+				ALUSrcB <= "11";
 				ALUOp <= "00";
-			elsif (op="101011") then		--sw
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '1';
-				memToReg <= 'X';
-				irWrite <= '0';
-				ALUSrcA <= '1';
-				regWrite <= '0';
-				regDst <= 'X';
-				pcSource <= "00";
-				ALUSrcB <= "00";
-				ALUOp <= "00";
-			elsif (op="000100") then		-- bne/beq
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '0';
-				memToReg <= 'X';
-				irWrite <= '0';
-				ALUSrcA <= '0';
-				regWrite <= '0';
-				regDst <= 'X';
-				pcSource <= "00";
-				ALUSrcB <= "00";
-				ALUOp <= "01";
+			if (op="000000") then			-- rtype
+				operate<=rtype;
+			elsif (op="100011") then		-- load
+				operate<=load;
+			elsif (op="101011") then		-- store
+				operate<=store;
+			elsif (op="000100") then		-- branch
+				operate<=branch;
 			elsif (op="010000") then		-- or
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '0';
-				memToReg <= '0';
-				irWrite <= '0';
-				ALUSrcA <= '0';
-				regWrite <= '0';
-				regDst <= '0';
-				pcSource <= "00";
-				ALUSrcB <= "00";
-				ALUOp <= "00";
-			elsif (op="010001") then		-- andi
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '0';
-				memToReg <= '0';
-				irWrite <= '0';
-				ALUSrcA <= '0';
-				regWrite <= '0';
-				regDst <= '0';
-				pcSource <= "00";
-				ALUSrcB <= "00";
-				ALUOp <= "00";
+				operate<=orop;
+			elsif (op="010001") then		-- itype
+				operate<=itype;
 			end if;
 		end if;
 
 		if (current_state=S_Ex) then
-			if (op="000000") then			-- add
 				pcWriteCond <= '0';
 				pcWrite <= '0';
 				IorD <= '0';
@@ -149,79 +90,34 @@ architecture behav of control_unit is
 				memToReg <= '0';
 				irWrite <= '0';
 				ALUSrcA <= '0';
-				regWrite <= '1';
-				regDst <= '1';
+				regWrite <= '0';
+				regDst <= '0';
 				pcSource <= "00";
+				ALUSrcB <= "11";
+				ALUOp <= "00";
+			if (operate=rtype) then			-- add
+				--regWrite <= '1';
+				--regDst <= '1';
+				ALUSrcA <= '1';
 				ALUSrcB <= "00";
 				ALUOp <= "10";
-			elsif (op="100011") then		-- lw
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '1';
-				memWrite <= '0';
-				memToReg <= '1';
-				irWrite <= '0';
+			elsif (operate=load) then		-- lw
 				ALUSrcA <= '1';
-				regWrite <= '1';
-				regDst <= '0';
-				pcSource <= "00";
-				ALUSrcB <= "00";
+				ALUSrcB <= "10";
 				ALUOp <= "00";
-			elsif (op="101011") then		--sw
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '1';
-				memToReg <= 'X';
-				irWrite <= '0';
+			elsif (operate=store) then		--sw
 				ALUSrcA <= '1';
-				regWrite <= '0';
-				regDst <= 'X';
-				pcSource <= "00";
-				ALUSrcB <= "00";
+				ALUSrcB <= "10";
 				ALUOp <= "00";
-			elsif (op="000100") then		-- bne/beq
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '0';
+			elsif (operate=branch) then		-- bne/beq
 				memToReg <= 'X';
-				irWrite <= '0';
-				ALUSrcA <= '0';
-				regWrite <= '0';
 				regDst <= 'X';
-				pcSource <= "00";
 				ALUSrcB <= "00";
 				ALUOp <= "01";
-			elsif (op="010000") then		-- or
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '0';
-				memToReg <= '0';
-				irWrite <= '0';
-				ALUSrcA <= '0';
-				regWrite <= '0';
-				regDst <= '0';
-				pcSource <= "00";
+			elsif (operate=orop) then		-- or
 				ALUSrcB <= "00";
 				ALUOp <= "00";
-			elsif (op="010001") then		-- andi
-				pcWriteCond <= '0';
-				pcWrite <= '0';
-				IorD <= '0';
-				memRead <= '0';
-				memWrite <= '0';
-				memToReg <= '0';
-				irWrite <= '0';
-				ALUSrcA <= '0';
-				regWrite <= '0';
-				regDst <= '0';
-				pcSource <= "00";
+			elsif (operate=itype) then		-- andi
 				ALUSrcB <= "00";
 				ALUOp <= "00";
 			end if;
