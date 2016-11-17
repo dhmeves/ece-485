@@ -3,6 +3,7 @@ force -freeze /test_bench_multicycle_datapath/test_bench/RAM/writeData 8e4b012c 
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/address 00000000 0
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/memWrite 1 0
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/memRead 0 0
+
 force -freeze /test_bench_multicycle_datapath/test_bench/register_file/REG0/data 00000000 0
 force -freeze /test_bench_multicycle_datapath/test_bench/register_file/REG0/ce 1 0
 force -freeze /test_bench_multicycle_datapath/test_bench/register_file/REG1/data 00000001 0
@@ -74,7 +75,7 @@ force -freeze /test_bench_multicycle_datapath/test_bench/RAM/memWrite 1 0
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/memRead 0 0
 
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG0/data 
-noforce sim:test_bench_multicycle_datapath/test_bench/register_file/REG0/ce
+noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG0/ce 
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG1/data 
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG1/ce 
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG2/data 
@@ -136,6 +137,7 @@ noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG30/data
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG30/ce
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG31/data 
 noforce sim:/test_bench_multicycle_datapath/test_bench/register_file/REG31/ce
+
 run 100
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/writeData 01716820 0
 force -freeze /test_bench_multicycle_datapath/test_bench/RAM/address 00000008 0
