@@ -33,7 +33,7 @@ architecture behav of control_unit is
 			end if;
 		end process;
 		
-		process(current_state) is
+		process(current_state, clk) is
 		begin
 		if (current_state=S_If) then
 				pcWriteCond <= '0';
@@ -125,10 +125,12 @@ architecture behav of control_unit is
 		end if;
 
 		if (current_state=S_Mem) then
-			if (operation=load) then		-- lw
+			if falling_edge(clk) and (operation=load) then		-- lw
 				memRead <= '1';
+				memWrite <= '0';
 				IorD <= '1';
-			elsif (operation=store) then		--sw
+			elsif rising_edge(clk) and (operation=store) then		--sw
+				memRead <= '0';
 				memWrite <= '1';
 				IorD <= '1';
 			end if;	

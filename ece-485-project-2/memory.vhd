@@ -101,18 +101,11 @@ architecture behav of memory is
 						mem(addr+1)<=inByte1;
 						mem(addr+2)<=inByte2;
 						mem(addr+3)<=inByte3;
-					else
-						mem(addr)<="ZZZZZZZZ";
-						mem(addr+1)<="ZZZZZZZZ";
-						mem(addr+2)<="ZZZZZZZZ";
-						mem(addr+3)<="ZZZZZZZZ";
 					end if;
 				end if;
 				if falling_edge(clk) then
 					if (memWrite='0') and (memRead='1') then
 						memData<=writeDataBuf;
-					else
-						memData<="ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 					end if;
 				end if;
 		end process;
