@@ -1,6 +1,7 @@
 library IEEE;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
+--use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 entity memory is
 	port(
@@ -17,7 +18,7 @@ architecture behav of memory is
 	begin
 		process(address, writeData, memWrite)
 			begin
-				addr <= conv_integer(address);
+				addr <= to_integer(unsigned(address));
 				if (memWrite='0') then
 					mem(addr)<=writeData;
 				elsif (memWrite='1') then
