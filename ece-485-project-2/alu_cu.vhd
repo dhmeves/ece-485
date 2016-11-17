@@ -18,10 +18,10 @@ architecture behav of alu_cu is
 	--signal	OP : std_logic_vector(2 downto 0);
 	begin 	
 		FuCo<= FC when (ALUOp = "10") else "000000";
-		orgateop0 <= FC(3) or FC(0);
+		orgateop0 <= FuCo(3) or FuCo(0);
 		andgateop0 <= orgateop0 and ALUOp(1);
-		notorgateop1 <= (not ALUOp(1)) or (not FC(2));
-		andgateop2 <= ALUOp(1) and FC(1);
+		notorgateop1 <= (not ALUOp(1)) or (not FuCo(2));
+		andgateop2 <= ALUOp(1) and FuCo(1);
 		orgateop2 <= ALUOp(0) or andgateop2;
 		op2 <= andgateop2;
 		op1 <= notorgateop1;
