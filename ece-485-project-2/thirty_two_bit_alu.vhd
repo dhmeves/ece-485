@@ -4,10 +4,10 @@ use ieee.std_logic_1164.all;
 entity thirty_two_bit_alu is
 	port(
 		a, bout : in std_logic_vector(31 downto 0);
-		less, ainvert, binvert, cin : in std_logic;
+		less, ainvert, binvert, cin, clk, rst, pre, ce : in std_logic;
 		ALUOp : in std_logic_vector(1 downto 0);
 		result : out std_logic_vector(31 downto 0);
-		cout, set, overflow, zero : out std_logic);
+		cout, set, overflow, zero: out std_logic);
 end thirty_two_bit_alu;
 
 architecture behav of thirty_two_bit_alu is
@@ -49,7 +49,7 @@ architecture behav of thirty_two_bit_alu is
 		ADD32 : entity work.alu(behav) port map(a(31), bout(31), less, ainvert, binvert, c(30), ALUOp, cout, add(31), set, overflow);
 		
 		result <= add;
-	
-		zero <= not((((add(0) or add(1)) OR (add(2) OR add(3))) OR ((add(4) OR add(5)) OR (add(6) OR add(7)))) OR (((add(8) OR add(9)) OR (add(10) OR add(11))) OR ((add(12) OR add(13)) OR (add(14) OR add(15))))) OR ((((add(16) OR add(17)) OR (add(18) OR add(19))) OR ((add(20) OR add(21)) OR (add(22) OR add(23)))) OR (((add(24) OR add(25)) OR (add(26) OR add(27))) OR ((add(28) OR add(29)) OR (add(30) OR add(31)))));
-		
+
+		--zero <= '1' when (add = "00000000000000000000000000000000");
+		zero <= '0' when ((add(0) = '1') or (add(2) = '1') or (add(3) = '1') or (add(4) = '1') or (add(5) = '1') or (add(6) = '1') or (add(7) = '1') or (add(8) = '1') or (add(9) = '1') or (add(10) = '1') or (add(11) = '1') or (add(12) = '1') or (add(13) = '1') or (add(14) = '1') or (add(15) = '1') or (add(16) = '1') or (add(17) = '1') or (add(18) = '1') or (add(19) = '1') or (add(20) = '1') or (add(21) = '1') or (add(22) = '1') or (add(23) = '1') or (add(24) = '1') or (add(25) = '1') or (add(26) = '1') or (add(27) = '1') or (add(28) = '1') or (add(29) = '1') or (add(30) = '1') or (add(31) = '1')); 
 end behav;	
