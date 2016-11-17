@@ -96,12 +96,12 @@ architecture behav of memory is
 		process(address, writeData, memWrite)
 			begin
 				addr <= to_integer(unsigned(address));
-				if (memWrite='1') then
+				if (memWrite='1') and (memRead='0') then
 					mem(addr)<=inByte0;
 					mem(addr+1)<=inByte1;
 					mem(addr+2)<=inByte2;
 					mem(addr+3)<=inByte3;
-				elsif (memWrite='0') then
+				elsif (memWrite='0') and (memRead='1') then
 					memData<=writeDataBuf;
 				else
 					memData<="ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
