@@ -63,7 +63,7 @@ architecture behav of control_unit is
 				ALUSrcA <= '0';
 				regWrite <= '0';
 				regDst <= '0';
-				pcSource <= "00";
+				pcSource <= "11";
 				ALUSrcB <= "11";
 				ALUOp <= "00";
 				branch_type <= '0';	
@@ -94,7 +94,7 @@ architecture behav of control_unit is
 				ALUSrcA <= '0';
 				regWrite <= '0';
 				regDst <= '0';
-				pcSource <= "00";
+				pcSource <= "11";
 				ALUSrcB <= "00";
 				ALUOp <= "00";
 			if (operation=rtype) then			-- add
@@ -128,6 +128,7 @@ architecture behav of control_unit is
 		end if;
 
 		if (current_state=S_Mem) then
+				pcSource<= "11";
 			if falling_edge(clk) and (operation=load) then		-- lw
 				memRead <= '1';
 				memWrite <= '0';
@@ -140,6 +141,7 @@ architecture behav of control_unit is
 		end if;
 
 		if (current_state=S_Wb) then
+				pcSource <= "11";
 			if (operation=rtype) then
 				regDst <= '1';
 				regWrite <= '1';
