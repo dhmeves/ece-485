@@ -87,5 +87,5 @@ architecture behav of multicycle_datapath is
 		ALU : entity work.thirty_two_bit_alu(behav) port map(ALU_A_IN, ALU_B_IN, less, ainvert, operation(2), cin, clk, rst, pre, ce, AluCuOp, ALU_BUF_IN, cout, set, overflow, ALUZeroCond, bne);
 		ALU_BUF : entity work.ALUOut(behav) port map(ALU_BUF_IN, clk, rst, pre, ce, ALU_BUF_OUT);
 		JUMP_Shift_Left : entity work.shift_register_by2(behav) port map(instr25_0_32_bit, jump28);
-		JUMP_MUX : entity work.four_to_one_mux(behav) port map(ALU_BUF_IN, ALU_BUF_OUT, jump28, immediate_four, pcSource, pcIn);
+		JUMP_MUX : entity work.four_to_one_mux(behav) port map(ALU_BUF_IN, ALU_BUF_OUT, jump28, pcIn, pcSource, pcIn);
 end behav;
