@@ -11,5 +11,5 @@ end program_counter;
 
 architecture behav of program_counter is
 	begin
-		PC : entity work.thirty_two_bit_register(behav) port map(input, clk, rst, pre, ce, output);
+		PC : entity work.thirty_two_bit_register(behav) port map(input, clk, rst, pre, control, output);
 end behav;

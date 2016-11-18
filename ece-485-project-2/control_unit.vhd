@@ -5,7 +5,7 @@ entity control_unit is
 	port(
 		op : in std_logic_vector(5 downto 0);
 		clk : in std_logic;
-		pcWriteCond, pcWrite, IorD, memRead, memWrite, memToReg, irWrite, ALUSrcA, regWrite, regDst : out std_logic;
+		pcWriteCond, pcWrite, IorD, memRead, memWrite, memToReg, irWrite, ALUSrcA, regWrite, regDst, branch_type : out std_logic;
 		pcSource, ALUSrcB, ALUOp : out std_logic_vector(1 downto 0)
 	);
 end control_unit;
@@ -49,7 +49,7 @@ architecture behav of control_unit is
 				pcSource <= "00";
 				ALUSrcB <= "01";
 				ALUOp <= "00";
-			
+				branch_type <= '0';			
 		end if;
 
 		if (current_state=S_ID) then
@@ -66,6 +66,7 @@ architecture behav of control_unit is
 				pcSource <= "00";
 				ALUSrcB <= "11";
 				ALUOp <= "00";
+				branch_type <= '0';	
 			if (op="000000") then			-- rtype
 				operation<=rtype;
 			elsif (op="100011") then		-- load
@@ -114,6 +115,7 @@ architecture behav of control_unit is
 				ALUOp <= "01";
 				pcWriteCond <= '1';
 				pcSource <= "01";
+				branch_type <= '0';
 			elsif (operation=orop) then		-- or
 				ALUSrcA <= '1';
 				ALUSrcB <= "00";
