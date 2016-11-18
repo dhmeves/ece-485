@@ -11,18 +11,13 @@ entity alu is
 end entity alu;
 
 architecture behav of alu is
-	signal A32, B32, LESS32, amuxoutput, bmuxoutput, andgate, orgate, sum, RESULT32 : std_logic_vector(31 downto 0);
-	
+	signal amuxoutput, bmuxoutput, andgate, orgate, sum : std_logic;
 	begin
-		A32(0) <= a;
-		B32(0) <= b;
-		LESS32(0) <= less;
-		result <= RESULT32(0);
 		--Creating objects of each (Port map sends the inputs for each object and receives output)
 		FULLADDER : entity work.one_bit_full_adder(behav) port map(amuxoutput, bmuxoutput, carryin, carryout, sum);
-		A_MUX : entity work.two_to_one_mux(behav) port map (A32, "not"(A32), ainvert, amuxoutput);
-		B_MUX : entity work.two_to_one_mux(behav) port map (B32, B32, binvert, bmuxoutput);
+		A_MUX : entity work.two_to_one_mux_1_bit(behav) port map (a, "not"(a), ainvert, amuxoutput);
+		B_MUX : entity work.two_to_one_mux_1_bit(behav) port map (b, b, binvert, bmuxoutput);
 		andgate <= amuxoutput and bmuxoutput;
 		orgate <= amuxoutput or bmuxoutput;
-		OUTMUX : entity work.four_to_one_mux(behav) port map (andgate, orgate, sum, LESS32, ALUOp, RESULT32);
+		OUTMUX : entity work.four_to_one_mux_1_bit(behav) port map (andgate, orgate, sum, less, ALUOp, result);
 end behav;
